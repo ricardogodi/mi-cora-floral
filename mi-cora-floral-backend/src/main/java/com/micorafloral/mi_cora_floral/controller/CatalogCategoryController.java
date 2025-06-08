@@ -13,7 +13,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/categories")
-
 public class CatalogCategoryController {
 
     private final CatalogCategoryService service;
