@@ -1,0 +1,13 @@
+<!-- mi-cora-floral-frontend/src/app/shared/product-card/product-card.component.html -->
+
+<mat-card>
+  <img *ngIf="imageUrl" mat-card-image [src]="fullImageUrl" alt="{{ name }}" />
+  <mat-card-title>{{ name }}</mat-card-title>
+  <mat-card-content>
+    <p>{{ description }}</p>
+    <p><strong>Price: ${{ price }}</strong></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Add to Cart</button>
+  </mat-card-actions>
+</mat-card>

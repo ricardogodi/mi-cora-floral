@@ -1,0 +1,9 @@
+.category-card {
+  width: 250px;
+  margin: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.category-card:hover {
+  transform: scale(1.05);
+}

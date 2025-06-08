@@ -1,0 +1,17 @@
+/** mi-cora-floral-frontend/src/app/pages/admin/catalog-manager/catalog-manager.component.css */
+
+.category-indicator {
+  min-height: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #333;
+  transition: opacity 0.2s ease;
+}
+
+.category-indicator.empty {
+  visibility: hidden;
+}
+
+.category-indicator-wrapper { /* This is just a patch */
+  padding: 0 0 0 32px;
+}

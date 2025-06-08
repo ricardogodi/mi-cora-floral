@@ -1,0 +1,46 @@
+<!--mi-cora-floral-frontend/src/app/shared/reusable-list/reusable-list.component.html-->
+<section class="reusable-list-wrapper">
+  <div
+    class="reusable-list"
+    cdkDropList
+    cdkDropListOrientation="mixed"
+    [cdkDropListData]="items"
+    (cdkDropListDropped)="dropItemEvent.emit($event)"
+  >
+    <div
+      class="reusable-card"
+      *ngFor="let item of items"
+      cdkDrag
+      (click)="selectItemEvent.emit(item);"
+    >
+      <div class="reusable-image-wrapper">
+        <img [src]="imageBaseUrl + item[imageKey]" alt="Imagen" />
+      </div>
+
+      <div class="reusable-content">
+        <div *ngIf="item.title" class="field-title">{{ item.title }}</div>
+        <div *ngIf="item.subtitle" class="field-subtitle">{{ item.subtitle }}</div>
+        <div *ngIf="item.name" class="field-name">{{ item.name }}</div>
+        <div *ngIf="item.description" class="field-description">{{ item.description }}</div>
+        <div *ngIf="item.price" class="field-price">Precio: ${{ item.price }}</div>
+
+        <label
+          *ngIf="item.featured !== undefined"
+          class="field-featured"
+        >
+          <input
+            type="checkbox"
+            [checked]="item.featured"
+            (change)="toggleCheckboxEvent.emit({ item, event: $event }); $event.stopPropagation()"
+          />
+          Destacado
+        </label>
+      </div>
+
+      <div class="reusable-actions">
+        <button (click)="editItemEvent.emit(item); $event.stopPropagation()">Editar</button>
+        <button (click)="deleteItemEvent.emit(item.id); $event.stopPropagation()">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</section>

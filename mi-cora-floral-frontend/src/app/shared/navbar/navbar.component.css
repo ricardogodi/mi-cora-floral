@@ -1,0 +1,94 @@
+/** mi-cora-floral-frontend/src/app/shared/navbar/navbar.component.css */
+
+/* Toolbar container */
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 2rem;
+  background-color: #3f6140; /* Deep forest green */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Spacer for pushing links to the right */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Navigation links */
+a {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #fdfcf9; /* Light cream */
+  text-decoration: none;
+  margin-left: 1.5rem;
+  padding: 0.4rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #fdfcf9;
+  width: 0;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a:hover {
+  color: #e7d7c1; /* Muted warm cream */
+}
+
+/* Active link */
+.active-link {
+  font-weight: bold;
+}
+
+.active-link::after {
+  width: 100%;
+}
+
+/* Responsive: stack links on small screens */
+@media (max-width: 768px) {
+  mat-toolbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 40px;
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    margin: 0.5rem;
+  }
+}

@@ -1,0 +1,46 @@
+/** mi-cora-floral-frontend/src/app/pages/admin/admin.component.css */
+
+:host {
+  display: block;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+app-hero-manager {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 2px solid #eee;
+}
+
+.admin-grids {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.admin-row {
+  width: 100%;
+}
+
+
+.dual-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.dual-row > * {
+  flex: 1 1 48%; /* Responsive: takes ~50% space */
+  min-width: 320px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,30 @@
+<!-- mi-cora-floral-frontend/src/app/shared/reusable-manager/reusable-manager.component.html -->
+
+<div class="panel-wrapper">
+  <div class="panel-header">
+    <button (click)="handleAddClick()">{{ addButtonText }}</button>
+    <button *ngIf="showBackButton" (click)="back.emit()">Volver a categorías</button>
+  </div>
+
+  <div class="panel-list-container">
+    <app-reusable-list
+      *ngIf="items.length"
+      [items]="items"
+      [imageKey]="imageKey"
+      (editItemEvent)="handleEdit($event)"
+      (deleteItemEvent)="handleDelete($event)"
+      (dropItemEvent)="handleDrop($event)"
+      (selectItemEvent)="handleSelect($event)"
+      (toggleCheckboxEvent)="toggleCheckboxEvent.emit($event)"
+    ></app-reusable-list>
+  </div>
+
+  <app-reusable-form
+    *ngIf="showForm"
+    [visible]="showForm"
+    [item]="editingItem"
+    [formFields]="formFields"
+    (submitItemEvent)="handleSubmit($event)"
+    (closeEvent)="handleClose()"
+  ></app-reusable-form>
+</div>

@@ -1,0 +1,28 @@
+<!-- catalog-manager.component.html -->
+<div class="manager-section">
+
+  <div class="manager-header">
+    <div class="manager-title">
+      <h2>Administrador de catálogo</h2>
+    </div>
+  </div>
+
+  <div class="category-indicator-wrapper">
+    <p class="category-indicator" [class.empty]="!(viewMode === 'productList' && selectedCategory)">
+      Categoría: <strong>{{ selectedCategory?.name }}</strong>
+    </p>
+  </div>
+
+  <div class="manager-content">
+
+    <ng-container *ngIf="viewMode === 'categoryList'">
+      <app-category-manager (selectCategory)="openCategory($event)"></app-category-manager>
+    </ng-container>
+
+    <ng-container *ngIf="viewMode === 'productList' && selectedCategory">
+      <app-product-manager [category]="selectedCategory" (back)="goBackToCategories()"></app-product-manager>
+    </ng-container>
+    
+  </div>
+
+</div>

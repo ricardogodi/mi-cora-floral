@@ -1,0 +1,33 @@
+<!-- mi-cora-floral-frontend/src/app/pages/contact/contact.component.html -->
+
+<div class="contact-form-container">
+  <h2>Contáctanos</h2>
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput type="text" name="name" [(ngModel)]="name" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Correo electrónico</mat-label>
+      <input matInput type="email" name="email" [(ngModel)]="email" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Número de teléfono</mat-label>
+      <input matInput type="text" name="phone" [(ngModel)]="phone" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Asunto</mat-label>
+      <input matInput type="text" name="subject" [(ngModel)]="subject" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Mensaje</mat-label>
+      <textarea matInput name="message" rows="5" [(ngModel)]="message" required></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Enviar</button>
+  </form>
+</div>

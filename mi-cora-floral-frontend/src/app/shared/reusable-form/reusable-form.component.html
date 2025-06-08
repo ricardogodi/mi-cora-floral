@@ -1,0 +1,40 @@
+<!-- mi-cora-floral-frontend/src/app/shared/reusable-form/reusable-form.component.html-->
+
+<div *ngIf="visible">
+  <div class="modal-backdrop" (click)="cancel()"></div>
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>{{ item ? 'Editar' : 'Añadir' }}</h3>
+      </div>
+
+      <div class="modal-body">
+        <div *ngFor="let field of formFields">
+          <label>{{ field.label }}:</label>
+
+          <input *ngIf="field.type === 'text'" [(ngModel)]="form[field.key]" />
+
+          <textarea *ngIf="field.type === 'textarea'" [(ngModel)]="form[field.key]"></textarea>
+
+          <label *ngIf="field.type === 'checkbox'">
+            <input type="checkbox" [(ngModel)]="form[field.key]" />
+            {{ field.label }}
+          </label>
+
+        </div>
+
+        <label>Imagen:</label>
+        <input type="file" (change)="onImageSelected($event)" />
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-buttons">
+          <button (click)="submit()">
+            {{ item ? 'Actualizar' : 'Añadir' }}
+          </button>
+          <button class="cancel" (click)="cancel()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

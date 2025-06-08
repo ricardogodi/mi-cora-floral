@@ -1,0 +1,22 @@
+<!-- mi-cora-floral-frontend/src/app/pages/admin/featured-manager/featured-manager.component.html -->
+
+<div class="featured-manager">
+  <h3>Productos destacados</h3>
+
+  <app-reusable-form
+    [visible]="showForm"
+    [formFields]="formFields"
+    [item]="editingProduct"
+    (submitItemEvent)="handleSubmit($event)"
+    (closeEvent)="handleClose()"
+  ></app-reusable-form>
+
+  <app-reusable-list
+    [items]="featuredProducts"
+    [imageKey]="'imageUrl'"
+    (editItemEvent)="handleEdit($event)"
+    (deleteItemEvent)="handleDelete($event)"
+    (dropItemEvent)="dropFeatured($event)"
+    (toggleCheckboxEvent)="handleFeaturedToggle($event)"
+  ></app-reusable-list>
+</div>

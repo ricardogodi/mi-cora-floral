@@ -1,0 +1,58 @@
+<!-- mi-cora-floral-frontend/src/app/pages/home/home.component.html -->
+
+<!-- Hero Section -->
+<section class="hero" *ngIf="heroes.length > 0"
+  [style.backgroundImage]="'url(' + imageBaseUrl + heroes[currentHeroIndex]?.imageUrl + ')'">
+
+  <!-- Arrow Buttons -->
+  <button class="arrow left" (click)="previousHero()">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+<div class="hero-content">
+  <div class="hero-text" #heroText>
+    <h1>{{ heroes[currentHeroIndex]?.title }}</h1>
+    <p>{{ heroes[currentHeroIndex]?.subtitle }}</p>
+  </div>
+  <a routerLink="/products" class="hero-cta-button">Ver Catálogo</a>
+</div>
+
+  <button class="arrow right" (click)="nextHero()">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+
+  <!-- ✅ Progress Dots -->
+  <div class="hero-dots">
+    <span
+      *ngFor="let hero of heroes; let i = index"
+      [class.active]="i === currentHeroIndex"
+      (click)="goToHero(i)">
+    </span>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="featured">
+  <h2>Destacados</h2>
+  <div class="product-grid">
+    <app-product-card 
+      *ngFor="let product of featuredProducts"
+      [name]="product.name"
+      [description]="product.description"
+         [price]="product.price"
+      [imageUrl]="product.imageUrl">
+    </app-product-card>
+  </div>
+</section>
+
+<!-- Contact & Social Links -->
+<footer class="contact">
+  <h3>Contáctanos</h3>
+  <p>Teléfono: +52 443 948 6855</p>
+  <p>Email: info&#64;micorafloral.com</p>
+  <div class="social-links">
+    <a href="https://www.instagram.com/micora_floral/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://wa.me/524439486855" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://www.facebook.com/p/Micora-Floral-100085303874153/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+  </div>
+</footer>

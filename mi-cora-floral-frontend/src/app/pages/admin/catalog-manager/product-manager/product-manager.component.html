@@ -1,0 +1,23 @@
+<!-- mi-cora-floral-frontend/src/app/pages/admin/catalog-manager/product-manager/product-manager.component.html -->
+
+
+<app-reusable-manager
+
+  [title]="'Administrador de productos'"
+  [addButtonText]="'Añadir producto'"
+  [sortInstruction]="'Ordena los productos'"
+  [orderKey]="'catalogOrder'"
+  [formFields]="formFields"
+  [imageKey]="'imageUrl'"
+  [service]="productService"
+  [jsonPartName]="'product'"
+  [items]="products"
+  [parentContext]="category"
+  [showBackButton]="true"  
+
+  (back)="back.emit()"            
+  (itemSelected)="selectProduct.emit($event)"
+  (reload)="loadCategoryProducts()"
+  (toggleCheckboxEvent)="handleToggle($event)" 
+
+></app-reusable-manager>

@@ -1,0 +1,18 @@
+<!-- mi-cora-floral-frontend/src/app/pages/admin/catalog-manager/category-manager/category-manager.component.html -->
+
+<app-reusable-manager
+
+  [title]="'Categorías'"
+  [addButtonText]="'Añadir categoría'"
+  [sortInstruction]="'Ordena las categorías'"
+  [orderKey]="'catalogOrder'"
+  [formFields]="formFields"
+  [imageKey]="'coverImageUrl'"
+  [service]="categoryService"
+  [items]="categories"
+ 
+  [jsonPartName]="'category'"
+  (itemSelected)="selectCategory.emit($event)"
+  (reload)="loadCategories()"
+  
+></app-reusable-manager>

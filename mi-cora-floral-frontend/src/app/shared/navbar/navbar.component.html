@@ -1,0 +1,13 @@
+<!-- mi-cora-floral-frontend/src/app/shared/navbar/navbar.component.html -->
+
+<mat-toolbar color="primary">
+  <a routerLink="/" class="logo-container">
+    <img src="assets/images/logo.png" alt="Mi Cora Floral Logo" class="logo" />
+  </a>
+
+  <span class="spacer"></span>
+
+  <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Página principal</a>
+  <a mat-button routerLink="/products" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Catálogo</a>
+  <a mat-button routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Contacto</a>
+</mat-toolbar>

@@ -1,0 +1,33 @@
+<!-- mi-cora-floral-frontend/src/app/pages/products/products.component.html -->
+
+<h1>Catálogo</h1>
+
+<div *ngIf="!currentCategory" class="category-list">
+
+  <a
+    *ngFor="let category of categories"
+    class="category-card"
+    [routerLink]="['/products', category.slug]"
+  >
+
+    <img [src]="'http://localhost:8080/uploads/' + category.coverImageUrl" alt="{{ category.name }}" />
+    <h2>{{ category.name }}</h2>
+    <p>{{ category.description }}</p>
+    
+  </a>
+</div>
+
+<div *ngIf="currentCategory">
+  <h2>Products in: {{ currentCategory.name }}</h2>
+  <button (click)="goBackToCategories()">← Back to Categories</button>
+
+  <div class="product-list">
+    <app-product-card
+      *ngFor="let product of categoryProducts"
+      [name]="product.name"
+      [description]="product.description"
+      [price]="product.price"
+      [imageUrl]="product.imageUrl">
+    </app-product-card>
+  </div>
+</div>

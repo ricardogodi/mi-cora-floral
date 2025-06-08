@@ -1,0 +1,29 @@
+<!-- mi-cora-floral-frontend/src/app/pages/admin/hero-manager/hero-manager.component.html -->
+
+<!-- mi-cora-floral-frontend/src/app/pages/admin/hero-manager/hero-manager.component.html -->
+
+<div class="manager-section">
+  <div class="manager-header">
+    <div class="manager-title">
+      <h2>Administrador de carrusel</h2>
+    </div>
+  </div>
+
+  <div class="manager-content">
+
+    <app-reusable-manager
+    
+      [title]="'Administrador de carrusel'"
+      [addButtonText]="'Añadir portada'"
+      [sortInstruction]="'Ordena el carrusel'"
+      [orderKey]="'heroOrder'"
+      [formFields]="formFields"
+      [imageKey]="'imageUrl'"
+      [service]="heroService"
+      [jsonPartName]="'hero'"
+      [items]="heroes"
+
+      (reload)="loadHeroes()"
+    ></app-reusable-manager>
+  </div>
+</div>
